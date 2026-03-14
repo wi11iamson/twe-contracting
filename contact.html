@@ -1,172 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact TWE Contracting for a free estimate on masonry, tile, concrete, or construction work in Michigan's Upper Peninsula.">
+  <meta name="keywords" content="contact, free estimate, masonry, contractor, upper peninsula, michigan, hancock">
+  <meta name="author" content="TWE Contracting">
+  <title>Contact | TWE Contracting</title>
 
-  <head>
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+  <link rel="manifest" href="favicons/manifest.json">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="TWE Contracting is your one-stop-shop for all your construction and repair needs. Whether you’re looking for help with something minor or need an experienced professional to take on a larger scale project — I’m your go-to pro and I’m ready to handle it all. Browse through the list of my services below, and get in touch for your free estimate." />
-    <meta name="author" content="jwilli.io">
-    <meta name="keywords" content="masonry,mason,up,u.p.,yooper,brick,stone,concrete,cement,contractor,construction,subcontractor,michigan,upper peninsula,hancock,houghton,repair,building,restoration,framing,handyman,skilled labor,new construction"/>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
-    <title>TWE Contracting</title>
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <!--Favicons-->
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
-    <link rel="manifest" href="./favicons/manifest.json">
-    <link rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="theme-color" content="#ffffff">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
+  <!-- AOS — Animate on Scroll -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Site CSS -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
 
-    <!-- Custom styles for this template -->
-    <link href="css/modern-business.css" rel="stylesheet">
+<body>
 
-    <!-- Google Analytics -->
-    <script>
-
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-111263500-1', 'auto');
-    ga('send', 'pageview');
-    </script>
-    <!-- End Google Analytics -->
-
-  </head>
-
-  <body>
-
-    <!-- Navigation -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">TWE Contracting</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-
-            <!--
-            <li class="nav-item">
-              <a class="nav-link" href="services.html">Services</a>
-            </li>-->
-
-            <li class="nav-item">
-              <a class="nav-link" href="portfolio.html" id="navbarDropdownPortfolio">Projects
-              </a>
-            </li>
-
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a>
-            </li>
-
-          </ul>
-        </div>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">TWE Contracting</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white" aria-hidden="true"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+            <a class="btn btn-accent" href="contact.html">Free Estimate</a>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- Page Content -->
+  <!-- ===== PAGE HERO ===== -->
+  <header class="page-hero" style="background-image: url('img/carousel/concrete.jpg')">
+    <div class="container">
+      <span class="eyebrow">Let's Talk</span>
+      <h1>Contact Us</h1>
+      <div class="accent-bar" style="margin-left:0"></div>
+    </div>
+  </header>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact-section">
     <div class="container">
 
-      <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">Contact TWE</h1>
-
-      <!-- Content Row -->
-      <div class="row">
-        <!-- Map Column -->
-        <div class="col-lg-8 mb-4">
-          <!-- Embedded Google Map -->
-          <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=47.1570635,-88.5371749&amp;spn=47.1570635,-88.5371749&amp;t=m&amp;z=12&amp;output=embed"></iframe>
+      <!-- Contact info cards -->
+      <div class="row g-4 mb-5" data-aos="fade-up">
+        <div class="col-md-4">
+          <div class="contact-card">
+            <div class="icon"><i class="fas fa-phone" aria-hidden="true"></i></div>
+            <h5>Phone</h5>
+            <a href="tel:9063702043">(906) 370-2043</a>
+          </div>
         </div>
-        <!-- Contact Details Column -->
-        <div class="col-lg-4 mb-4">
-          <h3>Contact Details</h3>
-          <p>
-            51160 Johanna Ln
-            <br>Hancock, MI 49930
-            <br>
-          </p>
-          <p>
-            <abbr title="Phone">P</abbr>:
-            <a href="tel:1-906-370-2043">(906) 370-2043</a>
-          </p>
-          <p>
-            <abbr title="Email">E</abbr>:
+        <div class="col-md-4">
+          <div class="contact-card">
+            <div class="icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+            <h5>Email</h5>
             <a href="mailto:travis@twecontracting.com">travis@twecontracting.com</a>
-          </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="contact-card">
+            <div class="icon"><i class="fas fa-location-dot" aria-hidden="true"></i></div>
+            <h5>Location</h5>
+            <p>51160 Johanna Ln<br>Hancock, MI 49930</p>
+          </div>
         </div>
       </div>
-      <!-- /.row -->
 
+      <!-- Form + Map -->
+      <div class="row g-5">
+        <div class="col-lg-6" data-aos="fade-right">
+          <h3 class="contact-form-heading">Request a Free Estimate</h3>
+          <div style="width:50px;height:4px;background:var(--accent);margin-bottom:2rem"></div>
 
-      <!-- Contact Form -->
-      <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-      <div class="row">
-        <div class="col-lg-8 mb-4">
-          <h3>Tell us about your project</h3>
-          <form name="sentMessage" id="contactForm" novalidate>
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>Full Name:</label>
-                <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
-                <p class="help-block"></p>
-              </div>
-            </div>
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>Phone Number:</label>
-                <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
-              </div>
-            </div>
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>Email Address:</label>
-                <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
-              </div>
-            </div>
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>Message:</label>
-                <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
-              </div>
-            </div>
-            <div id="success"></div>
+          <div id="formSuccess" class="alert alert-success d-none" role="alert" aria-live="polite">
+            <strong>Message sent!</strong> We'll get back to you within 1 business day.
+          </div>
+          <div id="formError" class="alert alert-danger d-none" role="alert" aria-live="polite">
+            <strong>Oops!</strong> Something went wrong. Please call or email us directly.
+          </div>
 
-            <!-- For success/fail messages -->
-          <button type="submit" class="btn btn-secondary" id="sendMessageButton">Send Message</button>
+          <form id="contactForm" novalidate aria-label="Contact form">
+            <div class="mb-4">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" class="form-control" id="name" name="name"
+                placeholder="John Smith" required autocomplete="name">
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+            <div class="mb-4">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="email" name="email"
+                placeholder="john@example.com" required autocomplete="email">
+              <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+            <div class="mb-4">
+              <label for="phone" class="form-label">
+                Phone <span class="text-muted fw-normal" style="text-transform:none;letter-spacing:0">(optional)</span>
+              </label>
+              <input type="tel" class="form-control" id="phone" name="phone"
+                placeholder="(906) 555-1234" autocomplete="tel">
+            </div>
+            <div class="mb-4">
+              <label for="subject" class="form-label">Project Type</label>
+              <select class="form-control" id="subject" name="subject" required>
+                <option value="" disabled selected>Select a service...</option>
+                <option>Masonry</option>
+                <option>Tile Work</option>
+                <option>Concrete</option>
+                <option>New Construction</option>
+                <option>Remodel</option>
+                <option>Carpentry</option>
+                <option>Other</option>
+              </select>
+              <div class="invalid-feedback">Please select a project type.</div>
+            </div>
+            <div class="mb-4">
+              <label for="message" class="form-label">Project Details</label>
+              <textarea class="form-control" id="message" name="message" rows="5"
+                placeholder="Tell us about your project..." required></textarea>
+              <div class="invalid-feedback">Please describe your project.</div>
+            </div>
+            <button type="submit" class="btn-submit" id="submitBtn">
+              <span id="submitText">Send Message</span>
+              <span id="submitSpinner" class="spinner-border spinner-border-sm ms-2 d-none" role="status" aria-hidden="true"></span>
+            </button>
           </form>
         </div>
 
+        <div class="col-lg-6" data-aos="fade-left">
+          <h3 class="contact-form-heading">Service Area</h3>
+          <div style="width:50px;height:4px;background:var(--accent);margin-bottom:1.5rem"></div>
+          <p class="text-muted mb-4" style="line-height:1.75">We proudly serve Hancock, Houghton, and communities throughout the Upper Peninsula of Michigan. Reach out for a free, no-obligation estimate.</p>
+          <div style="border-radius:8px;overflow:hidden;box-shadow:0 6px 28px rgba(0,0,0,0.1)">
+            <iframe
+              src="https://maps.google.com/maps?q=Hancock,+MI&t=m&z=11&output=embed"
+              width="100%"
+              height="400"
+              style="border:none;display:block"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="TWE Contracting service area — Hancock, MI">
+            </iframe>
+          </div>
+        </div>
       </div>
-      <!-- /.row -->
-
 
     </div>
-    <!-- /.container -->
+  </section>
 
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Licensed &amp; Insured | (906) 370-2043  |  Copyright &copy; TWE Contracting 2018</p>
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <span class="footer-brand">TWE Contracting</span>
+          <p>Quality masonry, tile, concrete, and construction services across the Upper Peninsula of Michigan.</p>
+          <p class="mt-2"><i class="fas fa-shield-halved text-accent me-2" aria-hidden="true"></i>Licensed &amp; Insured</p>
+        </div>
+        <div class="col-lg-2 col-6">
+          <div class="footer-links">
+            <h6>Navigate</h6>
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="contact.html">Free Estimate</a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-6">
+          <div class="footer-links">
+            <h6>Services</h6>
+            <a href="index.html#services">Masonry</a>
+            <a href="index.html#services">Tile Work</a>
+            <a href="index.html#services">Concrete</a>
+            <a href="index.html#services">New Construction</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="footer-links">
+            <h6>Get in Touch</h6>
+            <a href="tel:9063702043"><i class="fas fa-phone me-2" aria-hidden="true"></i>(906) 370-2043</a>
+            <a href="mailto:travis@twecontracting.com"><i class="fas fa-envelope me-2" aria-hidden="true"></i>travis@twecontracting.com</a>
+            <p class="mt-2"><i class="fas fa-location-dot me-2" aria-hidden="true"></i>51160 Johanna Ln, Hancock, MI 49930</p>
+          </div>
+        </div>
       </div>
-      <!-- /.container -->
-    </footer>
+      <hr class="footer-divider">
+      <p class="copyright">&copy; 2026 TWE Contracting. All rights reserved.</p>
+    </div>
+  </footer>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap 5.3 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmFP8fHl7AyFZDu4K3VWQmO9Q4=" crossorigin="anonymous"></script>
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Contact form (no jQuery) -->
+  <script src="js/contact_me.js"></script>
 
-    <!-- Contact form JavaScript -->
-    <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+  <script>
+    AOS.init({ duration: 650, easing: 'ease-out', once: true, offset: 70 });
 
-  </body>
+    (function () {
+      var nav = document.getElementById('mainNav');
+      window.addEventListener('scroll', function () {
+        nav.classList.toggle('scrolled', window.scrollY > 80);
+      }, { passive: true });
+    }());
+  </script>
 
+</body>
 </html>

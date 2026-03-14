@@ -1,78 +1,80 @@
-$(function() {
+(function () {
+  'use strict';
 
-  $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
-    preventSubmit: true,
-    submitError: function($form, event, errors) {
-      // additional error messages or events
-    },
-    submitSuccess: function($form, event) {
-      event.preventDefault(); // prevent default submit behaviour
-      // get values from FORM
-      var name = $("input#name").val();
-      var email = $("input#email").val();
-      var phone = $("input#phone").val();
-      var short_message = $("textarea#message").val();
-      var firstName = name; // For Success/Failure Message
-      // Check for white space in name for Success/Fail message
-      if (firstName.indexOf(' ') >= 0) {
-        firstName = name.split(' ').slice(0, -1).join(' ');
-      }
+  var API_ENDPOINT = 'https://kq85u6r4u2.execute-api.us-east-1.amazonaws.com/prod/twe-contact-form';
 
-      var subject = "TWE Contrating Estimate: " + name;
-      var message = "NAME: " + name + "  |  PHONE NUMBER: " + phone + "  |  MESSAGE: " + short_message;
-      var data = {email, subject, message};
+  var form          = document.getElementById('contactForm');
+  var submitBtn     = document.getElementById('submitBtn');
+  var submitText    = document.getElementById('submitText');
+  var submitSpinner = document.getElementById('submitSpinner');
+  var successAlert  = document.getElementById('formSuccess');
+  var errorAlert    = document.getElementById('formError');
 
-      console.log(JSON.stringify(data));
+  if (!form) return;
 
-      $this = $("#sendMessageButton");
-
-      $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
-      $.ajax({
-        url: "https://kq85u6r4u2.execute-api.us-east-1.amazonaws.com/prod/twe-contact-form",
-        type: 'POST',
-        dataType: "json",
-        data: JSON.stringify(data),
-        success: function() {
-          // Success message
-          $('#success').html("<div class='alert alert-success'>");
-          $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-            .append("</button>");
-          $('#success > .alert-success')
-            .append("<strong>Your message has been sent. </strong>");
-          $('#success > .alert-success')
-            .append('</div>');
-          //clear all fields
-          $('#contactForm').trigger("reset");
-        },
-        error: function() {
-          // Fail message
-          $('#success').html("<div class='alert alert-danger'>");
-          $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-            .append("</button>");
-          $('#success > .alert-danger').append($("<strong>").text("Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!"));
-          $('#success > .alert-danger').append('</div>');
-          //clear all fields
-          $('#contactForm').trigger("reset");
-        },
-        complete: function() {
-          setTimeout(function() {
-            $this.prop("disabled", false); // Re-enable submit button when AJAX call is complete
-          }, 1000);
-        }
-      });
-    },
-    filter: function() {
-      return $(this).is(":visible");
-    },
-  });
-
-  $("a[data-toggle=\"tab\"]").click(function(e) {
+  form.addEventListener('submit', function (e) {
     e.preventDefault();
-    $(this).tab("show");
-  });
-});
 
-/*When clicking on Full hide fail/success boxes */
-$('#name').focus(function() {
-  $('#success').html('');
-});
+    // Native HTML5 constraint validation
+    if (!form.checkValidity()) {
+      form.classList.add('was-validated');
+      return;
+    }
+
+    // Hide previous alerts
+    successAlert.classList.add('d-none');
+    errorAlert.classList.add('d-none');
+
+    // Loading state
+    submitBtn.disabled = true;
+    submitText.textContent = 'Sending\u2026';
+    submitSpinner.classList.remove('d-none');
+
+    var name    = form.name.value.trim();
+    var email   = form.email.value.trim();
+    var phone   = form.phone.value.trim();
+    var subject = 'TWE Contracting Estimate: ' + name + ' — ' + form.subject.value;
+    var message = 'NAME: ' + name
+                + ' | PHONE: ' + (phone || 'not provided')
+                + ' | SERVICE: ' + form.subject.value
+                + ' | MESSAGE: ' + form.message.value.trim();
+
+    var payload = { email: email, subject: subject, message: message };
+
+    fetch(API_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error('Server responded with status ' + res.status);
+        return res.json();
+      })
+      .then(function () {
+        successAlert.classList.remove('d-none');
+        form.reset();
+        form.classList.remove('was-validated');
+        successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      })
+      .catch(function () {
+        errorAlert.classList.remove('d-none');
+        errorAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      })
+      .finally(function () {
+        submitBtn.disabled = false;
+        submitText.textContent = 'Send Message';
+        submitSpinner.classList.add('d-none');
+      });
+  });
+
+  // Clear alerts when user starts typing again
+  ['name', 'email', 'phone', 'subject', 'message'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('input', function () {
+        successAlert.classList.add('d-none');
+        errorAlert.classList.add('d-none');
+      });
+    }
+  });
+}());
